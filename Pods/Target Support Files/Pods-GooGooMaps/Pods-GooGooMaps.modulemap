@@ -1,0 +1,6 @@
+framework module Pods_GooGooMaps {
+  umbrella header "Pods-GooGooMaps-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GooGooMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vt5-Mt-qof" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.13864213197969544" green="0.13864213197969544" blue="0.13864213197969544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-et-v9S" userLabel="Top Blur">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uXe-yv-RMk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBh-hY-qGh" userLabel="Action Bar">
+                                <rect key="frame" x="83" y="747.5" width="248" height="89.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p5F-8o-bht">
+                                    <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-eY-5gi">
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36e-UR-VCU" userLabel="currentLocation">
+                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="location"/>
+                                                    <connections>
+                                                        <action selector="getLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uzE-nt-R5c"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="nl9-eY-5gi" secondAttribute="trailing" id="BWi-lm-F9d"/>
+                                        <constraint firstAttribute="bottom" secondItem="nl9-eY-5gi" secondAttribute="bottom" id="lBw-sZ-Ayx"/>
+                                        <constraint firstItem="nl9-eY-5gi" firstAttribute="leading" secondItem="p5F-8o-bht" secondAttribute="leading" id="pvz-mG-otw"/>
+                                        <constraint firstItem="nl9-eY-5gi" firstAttribute="top" secondItem="p5F-8o-bht" secondAttribute="top" id="tf3-NK-tCO"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <blurEffect style="dark"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vt5-Mt-qof" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2rw-MT-fkB"/>
+                            <constraint firstItem="BBh-hY-qGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6F4-BN-7z6"/>
+                            <constraint firstItem="NPZ-et-v9S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eks-7h-u58"/>
+                            <constraint firstItem="BBh-hY-qGh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Lgs-Nm-Ulq"/>
+                            <constraint firstAttribute="trailing" secondItem="Vt5-Mt-qof" secondAttribute="trailing" id="Pln-Jj-rLW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="NPZ-et-v9S" secondAttribute="bottom" id="U2H-yJ-mcC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBh-hY-qGh" secondAttribute="bottom" constant="25" id="YL4-hr-beQ"/>
+                            <constraint firstItem="NPZ-et-v9S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jkg-wY-6bR"/>
+                            <constraint firstItem="NPZ-et-v9S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mzS-W6-UJ1"/>
+                            <constraint firstItem="Vt5-Mt-qof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rdE-hE-9c9"/>
+                            <constraint firstAttribute="bottom" secondItem="Vt5-Mt-qof" secondAttribute="bottom" id="tkE-t2-Waz"/>
+                            <constraint firstItem="BBh-hY-qGh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="v2N-qE-cZ2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Vt5-Mt-qof" id="MA9-Vd-fac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="32" height="32"/>
+    </resources>
+</document>
