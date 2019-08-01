@@ -14,7 +14,11 @@
 		4A5E376922EEF92800B4D0AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5E376722EEF92800B4D0AE /* LaunchScreen.storyboard */; };
 		4A5E377422EEF92800B4D0AE /* GooGooMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5E377322EEF92800B4D0AE /* GooGooMapsTests.swift */; };
 		4A7A781A22F0746900475499 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A781922F0746900475499 /* MapViewController.swift */; };
-		4A7A781D22F079CC00475499 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A781C22F079CC00475499 /* style.json */; };
+		4A7A781D22F079CC00475499 /* dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A781C22F079CC00475499 /* dark.json */; };
+		4A7A788122F321F000475499 /* silver.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A788022F321F000475499 /* silver.json */; };
+		4A7A788322F3225C00475499 /* retro.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A788222F3225C00475499 /* retro.json */; };
+		4A7A788522F3228800475499 /* google_standard.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A788422F3228800475499 /* google_standard.json */; };
+		4A7A788722F323BA00475499 /* gold.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A788622F323BA00475499 /* gold.json */; };
 		79C3D4ADE8D0542C58C7FD35 /* Pods_GooGooMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1159084E1EBF97591AE98CA /* Pods_GooGooMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +45,11 @@
 		4A5E377322EEF92800B4D0AE /* GooGooMapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooGooMapsTests.swift; sourceTree = "<group>"; };
 		4A5E377522EEF92800B4D0AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A7A781922F0746900475499 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4A7A781C22F079CC00475499 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		4A7A781C22F079CC00475499 /* dark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dark.json; sourceTree = "<group>"; };
+		4A7A788022F321F000475499 /* silver.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = silver.json; sourceTree = "<group>"; };
+		4A7A788222F3225C00475499 /* retro.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = retro.json; sourceTree = "<group>"; };
+		4A7A788422F3228800475499 /* google_standard.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = google_standard.json; sourceTree = "<group>"; };
+		4A7A788622F323BA00475499 /* gold.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gold.json; sourceTree = "<group>"; };
 		A8E78586D8EA9A7FBB0F1644 /* Pods-GooGooMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooGooMaps.release.xcconfig"; path = "Target Support Files/Pods-GooGooMaps/Pods-GooGooMaps.release.xcconfig"; sourceTree = "<group>"; };
 		D1159084E1EBF97591AE98CA /* Pods_GooGooMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooGooMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,13 +105,17 @@
 		4A5E375D22EEF92700B4D0AE /* GooGooMaps */ = {
 			isa = PBXGroup;
 			children = (
-				4A7A781C22F079CC00475499 /* style.json */,
+				4A7A781C22F079CC00475499 /* dark.json */,
 				4A5E375E22EEF92700B4D0AE /* AppDelegate.swift */,
 				4A5E376022EEF92700B4D0AE /* ViewController.swift */,
 				4A5E376222EEF92700B4D0AE /* Main.storyboard */,
 				4A5E376522EEF92800B4D0AE /* Assets.xcassets */,
 				4A5E376722EEF92800B4D0AE /* LaunchScreen.storyboard */,
 				4A5E376A22EEF92800B4D0AE /* Info.plist */,
+				4A7A788022F321F000475499 /* silver.json */,
+				4A7A788222F3225C00475499 /* retro.json */,
+				4A7A788422F3228800475499 /* google_standard.json */,
+				4A7A788622F323BA00475499 /* gold.json */,
 			);
 			path = GooGooMaps;
 			sourceTree = "<group>";
@@ -217,10 +229,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7A788322F3225C00475499 /* retro.json in Resources */,
 				4A5E376922EEF92800B4D0AE /* LaunchScreen.storyboard in Resources */,
 				4A5E376622EEF92800B4D0AE /* Assets.xcassets in Resources */,
+				4A7A788522F3228800475499 /* google_standard.json in Resources */,
 				4A5E376422EEF92700B4D0AE /* Main.storyboard in Resources */,
-				4A7A781D22F079CC00475499 /* style.json in Resources */,
+				4A7A788122F321F000475499 /* silver.json in Resources */,
+				4A7A781D22F079CC00475499 /* dark.json in Resources */,
+				4A7A788722F323BA00475499 /* gold.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,18 +37,28 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-eY-5gi">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="62.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="63"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36e-UR-VCU" userLabel="currentLocation">
-                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="62.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="63"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="location"/>
                                                     <connections>
                                                         <action selector="getLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uzE-nt-R5c"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSA-7R-fnZ" userLabel="style">
+                                                    <rect key="frame" x="124" y="0.0" width="124" height="63"/>
+                                                    <state key="normal" image="style"/>
+                                                    <connections>
+                                                        <action selector="changeStyle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7On-e0-8n6"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="MSA-7R-fnZ" firstAttribute="width" secondItem="36e-UR-VCU" secondAttribute="width" id="09S-94-ehA"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,5 +107,6 @@
     </scenes>
     <resources>
         <image name="location" width="32" height="32"/>
+        <image name="style" width="32" height="32"/>
     </resources>
 </document>

@@ -21,11 +21,17 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        //Sets color of status bar to white
         setupStatusBarColor()
         
+        //Shows map on the screen
         setupGoogleMap()
-        setStyle()
+        
+        //Point to current location
         getUserLocation()
+        
+        //Place markers
         addMarkers()
     }
     
@@ -35,18 +41,7 @@ class MapViewController: UIViewController {
         mapView.camera = camera
     }
     
-    //2 - Setup map color
-    func setStyle() {
-        do {
-            if let styleJSON = Bundle.main.url(forResource: "style", withExtension: "json") {
-                mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleJSON)
-            }
-        } catch {
-            print("Error in mapping")
-        }
-    }
-    
-    //3 - Get user location
+    //2 - Get user location
     func getUserLocation() {
         
         //sets delegate
@@ -60,11 +55,15 @@ class MapViewController: UIViewController {
     @IBAction func getLocation(_ sender: Any) {
         locationManager.startUpdatingLocation()
     }
+    
+    @IBAction func changeStyle(_ sender: Any) {
+        openStyleAlert()
+    }
 }
 
 extension MapViewController : CLLocationManagerDelegate {
     
-    //4 - updates map on authorization of location access
+    //3 - updates map on authorization of location access
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
         //if authorized
@@ -81,7 +80,7 @@ extension MapViewController : CLLocationManagerDelegate {
         }
     }
     
-    //5 - Called when location is get
+    //4 - Called when location is get
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         //get first instance of location
@@ -116,6 +115,7 @@ extension MapViewController {
     }
 }
 
+//Color Status Bar
 extension MapViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -124,5 +124,53 @@ extension MapViewController {
     
     func setupStatusBarColor() {
         self.setNeedsStatusBarAppearanceUpdate()
+    }
+}
+
+extension MapViewController {
+    
+    //Presents Options to choose style
+    func openStyleAlert() {
+        
+        //Open Alert Controller to select style
+        let alert = UIAlertController()
+        
+        //Add Google theme
+        alert.addAction(UIAlertAction(title: "Google", style: .default, handler: { (action) in
+            self.setTheme(name: "google_standard")
+        }))
+        
+        //Add Dark theme
+        alert.addAction(UIAlertAction(title: "Dark", style: .default, handler: { (action) in
+            self.setTheme(name: "dark")
+        }))
+        
+        //Add Silver theme
+        alert.addAction(UIAlertAction(title: "Silver", style: .default, handler: { (action) in
+            self.setTheme(name: "silver")
+        }))
+        
+        //Add Retro theme
+        alert.addAction(UIAlertAction(title: "Retro", style: .default, handler: { (action) in
+            self.setTheme(name: "retro")
+        }))
+        
+        //Add Gold theme
+        alert.addAction(UIAlertAction(title: "Gold", style: .default, handler: { _ in
+            self.setTheme(name: "gold")
+        }))
+        
+        present(alert, animated: true)
+    }
+    
+    //Sets the style to the map
+    func setTheme(name: String) {
+        do {
+            if let styleJSON = Bundle.main.url(forResource: "\(name)", withExtension: "json") {
+                self.mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleJSON)
+            }
+        } catch {
+            print("Error in styling")
+        }
     }
 }
