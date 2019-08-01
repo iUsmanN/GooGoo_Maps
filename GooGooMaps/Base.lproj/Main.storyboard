@@ -31,16 +31,16 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBh-hY-qGh" userLabel="Action Bar">
-                                <rect key="frame" x="83" y="747.5" width="248" height="89.5"/>
+                                <rect key="frame" x="83" y="774.5" width="248" height="62.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p5F-8o-bht">
-                                    <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="248" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-eY-5gi">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="62.5"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36e-UR-VCU" userLabel="currentLocation">
-                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="89.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="62.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="location"/>
                                                     <connections>
@@ -75,7 +75,7 @@
                             <constraint firstItem="Vt5-Mt-qof" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2rw-MT-fkB"/>
                             <constraint firstItem="BBh-hY-qGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6F4-BN-7z6"/>
                             <constraint firstItem="NPZ-et-v9S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eks-7h-u58"/>
-                            <constraint firstItem="BBh-hY-qGh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Lgs-Nm-Ulq"/>
+                            <constraint firstItem="BBh-hY-qGh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="Lgs-Nm-Ulq"/>
                             <constraint firstAttribute="trailing" secondItem="Vt5-Mt-qof" secondAttribute="trailing" id="Pln-Jj-rLW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="NPZ-et-v9S" secondAttribute="bottom" id="U2H-yJ-mcC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBh-hY-qGh" secondAttribute="bottom" constant="25" id="YL4-hr-beQ"/>

@@ -21,6 +21,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        setupStatusBarColor()
+        
         setupGoogleMap()
         setStyle()
         getUserLocation()
@@ -111,5 +113,16 @@ extension MapViewController {
         
         //Marker for Office
         addMarker(position: CLLocationCoordinate2D(latitude: 31.533793, longitude: 74.328561), title: "Office")
+    }
+}
+
+extension MapViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func setupStatusBarColor() {
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 }
