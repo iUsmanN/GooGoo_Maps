@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
     
     //view of the map
     @IBOutlet weak var mapView: GMSMapView!
@@ -26,19 +26,13 @@ class MapViewController: UIViewController {
         setupStatusBarColor()
         
         //Shows map on the screen
-        setupGoogleMap()
+        drawMap(mapView: mapView)
         
         //Point to current location
         getUserLocation()
         
         //Place markers
         addMarkers()
-    }
-    
-    //1 - Loads the map
-    func setupGoogleMap() {
-        let camera = GMSCameraPosition(latitude: 31.5337954, longitude: 74.3263944, zoom: 17)
-        mapView.camera = camera
     }
     
     //2 - Get user location
@@ -58,6 +52,10 @@ class MapViewController: UIViewController {
     
     @IBAction func changeStyle(_ sender: Any) {
         openStyleAlert()
+    }
+    
+    @IBAction func toggleTraffic(_ sender: Any) {
+        toggleTrafficOnMap(mapView: mapView)
     }
 }
 
@@ -95,23 +93,15 @@ extension MapViewController : CLLocationManagerDelegate {
     }
 }
 
-extension MapViewController {
+extension MapViewController : AddsMarker {
     
-    //Adds a marker to the map
-    func addMarker(position: CLLocationCoordinate2D, title: String) {
-        let marker = GMSMarker()
-        marker.position = position
-        marker.title = title
-        marker.map = mapView
-        marker.appearAnimation = .pop
-    }
-    
+    //Adds Marker to the map
     func addMarkers() {
         //Marker for home
-        addMarker(position: CLLocationCoordinate2D(latitude: 31.584333, longitude: 74.466217), title: "Home")
+        addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.584333, longitude: 74.466217), title: "Home", icon: nil)
         
         //Marker for Office
-        addMarker(position: CLLocationCoordinate2D(latitude: 31.533793, longitude: 74.328561), title: "Office")
+        addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.533793, longitude: 74.328561), title: "Office", icon: nil)
     }
 }
 
@@ -127,7 +117,7 @@ extension MapViewController {
     }
 }
 
-extension MapViewController {
+extension MapViewController : StylesMap {
     
     //Presents Options to choose style
     func openStyleAlert() {
@@ -137,40 +127,36 @@ extension MapViewController {
         
         //Add Google theme
         alert.addAction(UIAlertAction(title: "Google", style: .default, handler: { (action) in
-            self.setTheme(name: "google_standard")
+            self.setTheme(mapView: self.mapView, name: "google_standard")
         }))
         
         //Add Dark theme
         alert.addAction(UIAlertAction(title: "Dark", style: .default, handler: { (action) in
-            self.setTheme(name: "dark")
+            self.setTheme(mapView: self.mapView, name: "dark")
         }))
         
         //Add Silver theme
         alert.addAction(UIAlertAction(title: "Silver", style: .default, handler: { (action) in
-            self.setTheme(name: "silver")
+            self.setTheme(mapView: self.mapView, name: "silver")
         }))
         
         //Add Retro theme
         alert.addAction(UIAlertAction(title: "Retro", style: .default, handler: { (action) in
-            self.setTheme(name: "retro")
+            self.setTheme(mapView: self.mapView, name: "retro")
         }))
         
         //Add Gold theme
         alert.addAction(UIAlertAction(title: "Gold", style: .default, handler: { _ in
-            self.setTheme(name: "gold")
+            self.setTheme(mapView: self.mapView, name: "gold")
         }))
         
+        //Add Red theme
+        alert.addAction(UIAlertAction(title: "Red", style: .default, handler: { _ in
+            self.setTheme(mapView: self.mapView, name: "red")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         present(alert, animated: true)
-    }
-    
-    //Sets the style to the map
-    func setTheme(name: String) {
-        do {
-            if let styleJSON = Bundle.main.url(forResource: "\(name)", withExtension: "json") {
-                self.mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleJSON)
-            }
-        } catch {
-            print("Error in styling")
-        }
     }
 }
