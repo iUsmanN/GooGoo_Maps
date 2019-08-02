@@ -15,7 +15,7 @@ class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
     @IBOutlet weak var mapView: GMSMapView!
     
     //Used to manage user location
-    let locationManager = CLLocationManager()
+    let locationController = LocationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,67 +29,27 @@ class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
         drawMap(mapView: mapView)
         
         //Point to current location
-        getUserLocation()
+        locationController.getUserLocationPermission()
         
         //Place markers
         addMarkers()
     }
     
-    //2 - Get user location
-    func getUserLocation() {
-        
-        //sets delegate
-        locationManager.delegate = self
-        
-        //Asks for authorization
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
     //Button to move to current location
     @IBAction func getLocation(_ sender: Any) {
-        locationManager.startUpdatingLocation()
+        
+        locationController.setMap(map: mapView)
+        locationController.UpdateLocation()
     }
     
+    //Button to change the map style
     @IBAction func changeStyle(_ sender: Any) {
         openStyleAlert()
     }
     
+    //Button to toggle traffic on the map
     @IBAction func toggleTraffic(_ sender: Any) {
         toggleTrafficOnMap(mapView: mapView)
-    }
-}
-
-extension MapViewController : CLLocationManagerDelegate {
-    
-    //3 - updates map on authorization of location access
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
-        //if authorized
-        if status == .authorizedWhenInUse {
-            
-            //start updating location
-            locationManager.startUpdatingLocation()
-            
-            //shows blue location dot
-            mapView.isMyLocationEnabled = true
-            
-            //shows default location button
-            mapView.settings.myLocationButton = false
-        }
-    }
-    
-    //4 - Called when location is get
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //get first instance of location
-        guard let location = locations.first else { return }
-        
-        //set camera to point at location
-        mapView.animate(to: GMSCameraPosition(target: location.coordinate, zoom: 15))
-        mapView.animate(toZoom: 16)
-        
-        //stop getting further locations
-        locationManager.stopUpdatingLocation()
     }
 }
 
@@ -99,9 +59,6 @@ extension MapViewController : AddsMarker {
     func addMarkers() {
         //Marker for home
         addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.584333, longitude: 74.466217), title: "Home", icon: nil)
-        
-        //Marker for Office
-        addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.533793, longitude: 74.328561), title: "Office", icon: nil)
     }
 }
 
@@ -126,22 +83,22 @@ extension MapViewController : StylesMap {
         let alert = UIAlertController()
         
         //Add Google theme
-        alert.addAction(UIAlertAction(title: "Google", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Google", style: .default, handler: { _ in
             self.setTheme(mapView: self.mapView, name: "google_standard")
         }))
         
         //Add Dark theme
-        alert.addAction(UIAlertAction(title: "Dark", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Dark", style: .default, handler: { _ in
             self.setTheme(mapView: self.mapView, name: "dark")
         }))
         
         //Add Silver theme
-        alert.addAction(UIAlertAction(title: "Silver", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Silver", style: .default, handler: { _ in
             self.setTheme(mapView: self.mapView, name: "silver")
         }))
         
         //Add Retro theme
-        alert.addAction(UIAlertAction(title: "Retro", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Retro", style: .default, handler: { _ in
             self.setTheme(mapView: self.mapView, name: "retro")
         }))
         

@@ -23,5 +23,4 @@ extension StylesMap {
             print("Error in styling")
         }
     }
-    
 }
