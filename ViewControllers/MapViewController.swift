@@ -114,5 +114,14 @@ extension MapViewController : GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print(coordinate)
+        
+        //Add temporary marker
+        addMarker(mapView: mapView, position: coordinate, title: "X", icon: nil)
+        
+        //Animate the map so that the point is a little bit above the center of the screen
+        mapView.animate(to: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: coordinate.latitude - (coordinate.latitude * 0.00006), longitude: coordinate.longitude), zoom: 16))
+        
+        //Align map to North Heading
+        mapView.animate(toBearing: 0)
     }
 }

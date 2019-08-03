@@ -16,7 +16,7 @@ class LocationController : CLLocationManager, CLLocationManagerDelegate, AddsMar
     let locationManager = CLLocationManager()
     
     //Map view from the MapViewController
-    var mapView : GMSMapView?
+    var mapView         : GMSMapView?
     
     //Set map object
     func setMap(map: GMSMapView) {
@@ -57,8 +57,7 @@ class LocationController : CLLocationManager, CLLocationManagerDelegate, AddsMar
         guard let location = locations.first else { return }
         
         //set camera to point at location
-        mapView.animate(to: GMSCameraPosition(target: location.coordinate, zoom: 15))
-        mapView.animate(toZoom: 16)
+        mapView.animate(to: GMSCameraPosition(target: location.coordinate, zoom: 16))
         
         //stop getting further locations
         locationManager.stopUpdatingLocation()

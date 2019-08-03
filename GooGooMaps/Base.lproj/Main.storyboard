@@ -20,7 +20,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vt5-Mt-qof" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.13864213197969544" green="0.13864213197969544" blue="0.13864213197969544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-et-v9S" userLabel="Top Blur">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -92,6 +91,7 @@
                         <constraints>
                             <constraint firstItem="Vt5-Mt-qof" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2rw-MT-fkB"/>
                             <constraint firstItem="BBh-hY-qGh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6F4-BN-7z6"/>
+                            <constraint firstItem="Vt5-Mt-qof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="APb-zo-VIL"/>
                             <constraint firstItem="NPZ-et-v9S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eks-7h-u58"/>
                             <constraint firstItem="BBh-hY-qGh" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="Lgs-Nm-Ulq"/>
                             <constraint firstAttribute="trailing" secondItem="Vt5-Mt-qof" secondAttribute="trailing" id="Pln-Jj-rLW"/>
@@ -99,7 +99,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BBh-hY-qGh" secondAttribute="bottom" constant="25" id="YL4-hr-beQ"/>
                             <constraint firstItem="NPZ-et-v9S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jkg-wY-6bR"/>
                             <constraint firstItem="NPZ-et-v9S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mzS-W6-UJ1"/>
-                            <constraint firstItem="Vt5-Mt-qof" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rdE-hE-9c9"/>
                             <constraint firstAttribute="bottom" secondItem="Vt5-Mt-qof" secondAttribute="bottom" id="tkE-t2-Waz"/>
                             <constraint firstItem="BBh-hY-qGh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="v2N-qE-cZ2"/>
                         </constraints>
@@ -111,6 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>
         </scene>
     </scenes>
     <resources>

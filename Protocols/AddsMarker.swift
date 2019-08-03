@@ -17,21 +17,21 @@ extension AddsMarker {
     func addMarker(mapView: GMSMapView, position: CLLocationCoordinate2D, title: String, icon: String?) {
         
         //Create marker
-        let marker = GMSMarker()
+        let marker              = GMSMarker()
         
         //Set position of marker
-        marker.position = position
+        marker.position         = position
         
         //Set title of marker
-        marker.title = title
+        marker.title            = title
         
         //Set marker to map
-        marker.map = mapView
+        marker.map              = mapView
         
         //Set marker icon
-        if let icon = icon { marker.icon = UIImage(named: icon) } else { print("No icon defined.") }
+        if let icon             = icon { marker.icon = UIImage(named: icon) } else { print("No icon defined.") }
         
         //Set marker appear animation
-        marker.appearAnimation = .pop
+        marker.appearAnimation  = .pop
     }
 }
