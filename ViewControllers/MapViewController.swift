@@ -21,6 +21,7 @@ class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        mapView.delegate = self
         
         //Sets color of status bar to white
         setupStatusBarColor()
@@ -28,18 +29,33 @@ class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
         //Shows map on the screen
         drawMap(mapView: mapView)
         
-        //Point to current location
+        //Load Map Style
+        loadInitialStyle(mapView: mapView)
+        
+        //Set map in location controller
+        locationController.setMap(map: mapView)
+        
+        //Permission to get current location
         locationController.getUserLocationPermission()
         
         //Place markers
         addMarkers()
+        
+        //Point to current location
+        getLocation(nil)
     }
     
     //Button to move to current location
-    @IBAction func getLocation(_ sender: Any) {
+    @IBAction func getLocation(_ sender: Any?) {
         
-        locationController.setMap(map: mapView)
+        //Update location
         locationController.UpdateLocation()
+        
+        //shows blue location dot
+        mapView.isMyLocationEnabled = true
+        
+        //shows default location button
+        mapView.settings.myLocationButton = false
     }
     
     //Button to change the map style
@@ -58,7 +74,7 @@ extension MapViewController : AddsMarker {
     //Adds Marker to the map
     func addMarkers() {
         //Marker for home
-        addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.584333, longitude: 74.466217), title: "Home", icon: nil)
+        addMarker(mapView: mapView, position: CLLocationCoordinate2D(latitude: 31.584333, longitude: 74.466217), title: "Home", icon: "cross")
     }
 }
 
@@ -79,41 +95,24 @@ extension MapViewController : StylesMap {
     //Presents Options to choose style
     func openStyleAlert() {
         
-        //Open Alert Controller to select style
-        let alert = UIAlertController()
+        //Object to handle alert view code
+        let alertView = AlertManager(map: mapView)
         
-        //Add Google theme
-        alert.addAction(UIAlertAction(title: "Google", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "google_standard")
-        }))
+        //Get the styles Alert view controller
+        let stylesAlert = alertView.StylesAlert()
         
-        //Add Dark theme
-        alert.addAction(UIAlertAction(title: "Dark", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "dark")
-        }))
-        
-        //Add Silver theme
-        alert.addAction(UIAlertAction(title: "Silver", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "silver")
-        }))
-        
-        //Add Retro theme
-        alert.addAction(UIAlertAction(title: "Retro", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "retro")
-        }))
-        
-        //Add Gold theme
-        alert.addAction(UIAlertAction(title: "Gold", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "gold")
-        }))
-        
-        //Add Red theme
-        alert.addAction(UIAlertAction(title: "Red", style: .default, handler: { _ in
-            self.setTheme(mapView: self.mapView, name: "red")
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(alert, animated: true)
+        //Present the styles alert controller
+        present(stylesAlert, animated: true)
+    }
+}
+
+extension MapViewController : GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTapMyLocation location: CLLocationCoordinate2D) {
+        print("Tapped my location")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print(coordinate)
     }
 }

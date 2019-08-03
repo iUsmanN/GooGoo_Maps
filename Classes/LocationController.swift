@@ -9,7 +9,6 @@
 import Foundation
 import GoogleMaps
 import UIKit
-import CoreLocation
 
 class LocationController : CLLocationManager, CLLocationManagerDelegate, AddsMarker {
     
@@ -41,19 +40,11 @@ class LocationController : CLLocationManager, CLLocationManagerDelegate, AddsMar
     //3 - updates map on authorization of location access
     func locationManager( _ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         
-        guard let mapView = mapView else { return }
-        
         //if authorized
         if status == .authorizedWhenInUse {
             
             //start updating location
             locationManager.startUpdatingLocation()
-            
-            //shows blue location dot
-            mapView.isMyLocationEnabled = true
-            
-            //shows default location button
-            mapView.settings.myLocationButton = true
         }
     }
     
@@ -68,9 +59,6 @@ class LocationController : CLLocationManager, CLLocationManagerDelegate, AddsMar
         //set camera to point at location
         mapView.animate(to: GMSCameraPosition(target: location.coordinate, zoom: 15))
         mapView.animate(toZoom: 16)
-        
-        //Add marker for current position on map
-        addMarker(mapView: mapView, position: location.coordinate, title: "O", icon: "location")
         
         //stop getting further locations
         locationManager.stopUpdatingLocation()
