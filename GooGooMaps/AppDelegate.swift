@@ -15,11 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let GMS_API_KEY = "AIzaSyCBvPCZ9-I8XjZBjkfX8b5UzezCPBAi01A"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyCBvPCZ9-I8XjZBjkfX8b5UzezCPBAi01A")
-        GMSPlacesClient.provideAPIKey("AIzaSyCBvPCZ9-I8XjZBjkfX8b5UzezCPBAi01A")
+        GMSServices.provideAPIKey(GMS_API_KEY)
+        GMSPlacesClient.provideAPIKey(GMS_API_KEY)
         return true
     }
 

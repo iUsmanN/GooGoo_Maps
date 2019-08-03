@@ -1,0 +1,383 @@
+{
+    bounds =     {
+        northeast =         {
+            lat = "31.5898864";
+            lng = "74.44878319999999";
+        };
+        southwest =         {
+            lat = "31.5708613";
+            lng = "74.4343688";
+        };
+    };
+    copyrights = "Map data \U00a92019";
+    legs =     (
+    {
+        distance =             {
+            text = "5.9 km";
+            value = 5885;
+        };
+        duration =             {
+            text = "10 mins";
+            value = 624;
+        };
+        "end_address" = "Lahore Ring Rd, Harbanspura, Lahore, Punjab, Pakistan";
+        "end_location" =             {
+            lat = "31.5708613";
+            lng = "74.43527879999999";
+        };
+        "start_address" = "Goraya St, Lahore Press Club Housing Scheme, Lahore - \U0644\U0627\U06c1\U0648\U0631, Lahore, Punjab, Pakistan";
+        "start_location" =             {
+            lat = "31.5786765";
+            lng = "74.4482254";
+        };
+        steps =             (
+        {
+            distance =                     {
+                text = "22 m";
+                value = 22;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 5;
+            };
+            "end_location" =                     {
+                lat = "31.57851879999999";
+                lng = "74.448341";
+            };
+            "html_instructions" = "Head <b>southeast</b>";
+            polyline =                     {
+                points = "wuv_EmtkeMDGBEBADCBAB?B?";
+            };
+            "start_location" =                     {
+                lat = "31.5786765";
+                lng = "74.4482254";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "42 m";
+                value = 42;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 13;
+            };
+            "end_location" =                     {
+                lat = "31.5785026";
+                lng = "74.44878319999999";
+            };
+            "html_instructions" = "Turn <b>left</b>";
+            maneuver = "turn-left";
+            polyline =                     {
+                points = "wtv_EcukeMBwA";
+            };
+            "start_location" =                     {
+                lat = "31.57851879999999";
+                lng = "74.448341";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "0.3 km";
+                value = 281;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 58;
+            };
+            "end_location" =                     {
+                lat = "31.5760755";
+                lng = "74.4479647";
+            };
+            "html_instructions" = "Turn <b>right</b><div style=\"font-size:0.9em\">Pass by Bismillah Store (on the left)</div>";
+            maneuver = "turn-right";
+            polyline =                     {
+                points = "stv_E{wkeM`Dx@rAZ@@z@RxCl@TH";
+            };
+            "start_location" =                     {
+                lat = "31.5785026";
+                lng = "74.44878319999999";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "41 m";
+                value = 41;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 11;
+            };
+            "end_location" =                     {
+                lat = "31.5761883";
+                lng = "74.44837339999999";
+            };
+            "html_instructions" = "Turn <b>left</b> at Lahore Press Club Housing Scheme onto <b>Canal Rd</b>";
+            maneuver = "turn-left";
+            polyline =                     {
+                points = "oev_EwrkeMUqA";
+            };
+            "start_location" =                     {
+                lat = "31.5760755";
+                lng = "74.4479647";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "66 m";
+                value = 66;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 26;
+            };
+            "end_location" =                     {
+                lat = "31.5756221";
+                lng = "74.448499";
+            };
+            "html_instructions" = "Turn <b>right</b> at Lala g dahi bhaly onto <b>Ameer Hamza Rd</b>";
+            maneuver = "turn-right";
+            polyline =                     {
+                points = "efv_EiukeM\\M`@Op@B";
+            };
+            "start_location" =                     {
+                lat = "31.5761883";
+                lng = "74.44837339999999";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "0.1 km";
+                value = 140;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 28;
+            };
+            "end_location" =                     {
+                lat = "31.5753278";
+                lng = "74.44706359999999";
+            };
+            "html_instructions" = "Turn <b>right</b> onto <b>Service Road</b><div style=\"font-size:0.9em\">Pass by BISS - Balad ul Ilm School System Canal Campus (on the right)</div>";
+            maneuver = "turn-right";
+            polyline =                     {
+                points = "sbv_EcvkeMp@rFFj@";
+            };
+            "start_location" =                     {
+                lat = "31.5756221";
+                lng = "74.448499";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "25 m";
+                value = 25;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 4;
+            };
+            "end_location" =                     {
+                lat = "31.5755503";
+                lng = "74.4470108";
+            };
+            "html_instructions" = "Turn <b>right</b> toward <b>Canal Rd</b>";
+            maneuver = "turn-right";
+            polyline =                     {
+                points = "y`v_EcmkeMk@H";
+            };
+            "start_location" =                     {
+                lat = "31.5753278";
+                lng = "74.44706359999999";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "1.2 km";
+                value = 1185;
+            };
+            duration =                     {
+                text = "2 mins";
+                value = 121;
+            };
+            "end_location" =                     {
+                lat = "31.57290759999999";
+                lng = "74.4349088";
+            };
+            "html_instructions" = "Turn <b>left</b> onto <b>Canal Rd</b><div style=\"font-size:0.9em\">Pass by SB Designs (on the left in 1.1&nbsp;km)</div>";
+            maneuver = "turn-left";
+            polyline =                     {
+                points = "ebv_EylkeMpAbLh@xEz@pGbAnIdCdRLZJXN|@^bC`@~BHr@Ff@@NBX@FFf@";
+            };
+            "start_location" =                     {
+                lat = "31.5755503";
+                lng = "74.4470108";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "78 m";
+                value = 78;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 16;
+            };
+            "end_location" =                     {
+                lat = "31.5736068";
+                lng = "74.43493509999999";
+            };
+            "html_instructions" = "Turn <b>right</b>";
+            maneuver = "turn-right";
+            polyline =                     {
+                points = "uqu_EeaieMUAU?_BC";
+            };
+            "start_location" =                     {
+                lat = "31.57290759999999";
+                lng = "74.4349088";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "70 m";
+                value = 70;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 13;
+            };
+            "end_location" =                     {
+                lat = "31.5742354";
+                lng = "74.4349325";
+            };
+            "html_instructions" = "Take the ramp to <b>Lahore Ring Rd</b>/<b>L-20</b>";
+            polyline =                     {
+                points = "avu_EkaieMo@@mA?";
+            };
+            "start_location" =                     {
+                lat = "31.5736068";
+                lng = "74.43493509999999";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "1.3 km";
+                value = 1259;
+            };
+            duration =                     {
+                text = "2 mins";
+                value = 118;
+            };
+            "end_location" =                     {
+                lat = "31.5855319";
+                lng = "74.4354656";
+            };
+            "html_instructions" = "Keep <b>right</b> and merge onto <b>Lahore Ring Rd</b>/<b>L-20</b><div style=\"font-size:0.9em\">Partial toll road</div>";
+            maneuver = "keep-right";
+            polyline =                     {
+                points = "_zu_EiaieMq@AM@mCQUAMCKEkHEG?GAG?{DMyC[yMII?E?{@A}LKC?E?e@AkDAyB?";
+            };
+            "start_location" =                     {
+                lat = "31.5742354";
+                lng = "74.4349325";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "0.3 km";
+                value = 330;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 20;
+            };
+            "end_location" =                     {
+                lat = "31.5884305";
+                lng = "74.43474719999999";
+            };
+            "html_instructions" = "Take the exit toward <b>Lahore Ring Rd</b>/<b>L-20</b>";
+            maneuver = "ramp-left";
+            polyline =                     {
+                points = "q`x_EudieMg@J[Dy@FoBNk@Fe@DUDQBk@LYFm@NcAVc@N";
+            };
+            "start_location" =                     {
+                lat = "31.5855319";
+                lng = "74.4354656";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "0.1 km";
+                value = 146;
+            };
+            duration =                     {
+                text = "1 min";
+                value = 14;
+            };
+            "end_location" =                     {
+                lat = "31.5896935";
+                lng = "74.43437";
+            };
+            "html_instructions" = "Keep <b>right</b> at the fork to continue toward <b>Lahore Ring Rd</b>/<b>L-20</b>";
+            maneuver = "fork-right";
+            polyline =                     {
+                points = "urx_Ee`ieM{@Pm@La@JG@c@L]JQBI@IA";
+            };
+            "start_location" =                     {
+                lat = "31.5884305";
+                lng = "74.43474719999999";
+            };
+            "travel_mode" = DRIVING;
+        },
+        {
+            distance =                     {
+                text = "2.2 km";
+                value = 2200;
+            };
+            duration =                     {
+                text = "3 mins";
+                value = 177;
+            };
+            "end_location" =                     {
+                lat = "31.5708613";
+                lng = "74.43527879999999";
+            };
+            "html_instructions" = "Keep <b>right</b> at the fork and merge onto <b>Lahore Ring Rd</b>/<b>L-20</b><div style=\"font-size:0.9em\">Partial toll road</div><div style=\"font-size:0.9em\">Destination will be on the right</div>";
+            maneuver = "fork-right";
+            polyline =                     {
+                points = "qzx_Ey}heMKQEKCICKACAMAIACAGAOA]@CHQLOPMRMPEBANCt@IP@P?`@?j@Cj@A|@Ad@A~AEbAGbAAlAAx@CL@R@PBvBAzD@~@@B?D?xNJF?D?dLHjKJD?F?v@@zGFzGDZ@\\?L?|A@f@@f@?nJF";
+            };
+            "start_location" =                     {
+                lat = "31.5896935";
+                lng = "74.43437";
+            };
+            "travel_mode" = DRIVING;
+        }
+        );
+        "traffic_speed_entry" =             (
+        );
+        "via_waypoint" =             (
+        );
+    }
+    );
+    "overview_polyline" =     {
+        points = "wuv_EmtkeMHMHEFAB?BwAtFtA|@TnDv@UqA\\M`@Op@Bx@~Gk@HpAbLdBjNhEt\\Xt@n@`Ej@rDNxAFf@UAuBC}D@cDSYIcIG{DMyC[cNIcOMqICcAPiDVyBVwD|@c@N{@PoAX{A^S?Q]IYGc@Cm@JU^]d@SREfAGjCEbBCbDMxEEd@DrH?bQL`d@^pOJnJF";
+    };
+    summary = "Lahore Ring Rd/L-20";
+    warnings =     (
+    );
+    "waypoint_order" =     (
+    );
+}

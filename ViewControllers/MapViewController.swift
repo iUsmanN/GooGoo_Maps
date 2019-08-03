@@ -20,7 +20,9 @@ class MapViewController: UIViewController, DrawsMap, DisplaysTraffic {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        /// Do any additional setup after loading the view.
+        
+        //Set delegate of the Map
         mapView.delegate = self
         
         //Sets color of status bar to white
@@ -123,5 +125,10 @@ extension MapViewController : GMSMapViewDelegate {
         
         //Align map to North Heading
         mapView.animate(toBearing: 0)
+        
+        guard let myloc = mapView.myLocation else { return }
+        //drawPath(mapView: mapView, from: myloc.coordinate, to: coordinate)
+        
+        PathManager.shared.drawPath(mapView: mapView, from: myloc.coordinate, to: coordinate)
     }
 }
