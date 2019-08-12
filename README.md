@@ -1,6 +1,10 @@
 # GooGoo_Maps
 iOS Google Maps clone with Directions API
 
+## Instructions
+- Run "pod install" command in project directory
+- Build and Run
+
 ## Custom Styles
 <p float="left">
 <img src="https://user-images.githubusercontent.com/15052850/62837319-a2d53780-bc87-11e9-89ef-b5b19959281f.png" width="170">
@@ -17,6 +21,9 @@ iOS Google Maps clone with Directions API
 <img src="https://user-images.githubusercontent.com/15052850/62837515-cef1b800-bc89-11e9-8404-5918af40fea2.png" width="200">
 <img src="https://user-images.githubusercontent.com/15052850/62837518-d5802f80-bc89-11e9-9bd3-a1bcf57e61bb.png" width="200">
 </p>
+
+### Why "GooGoo" ?
+https://www.youtube.com/watch?v=6yswvnXpreI
 
 -----------------------
 Muhammad Usman Nazir
